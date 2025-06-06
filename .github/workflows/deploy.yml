@@ -19,9 +19,8 @@ jobs:
 
       - name: Build site
         run: |
-          shopt -s extglob
           mkdir -p _site
-          cp -r !( _site ) _site/
+          find . -maxdepth 1 -not -name "_site" -not -name "." -not -name ".." -exec cp -r {} _site/ \;
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
