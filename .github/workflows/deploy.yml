@@ -19,6 +19,7 @@ jobs:
 
       - name: Build site
         run: |
+          shopt -s extglob
           mkdir -p _site
           cp -r !( _site ) _site/
 
