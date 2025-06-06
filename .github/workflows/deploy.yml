@@ -20,7 +20,7 @@ jobs:
       - name: Build site
         run: |
           mkdir -p _site
-          cp -r * _site/
+          cp -r !( _site ) _site/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
